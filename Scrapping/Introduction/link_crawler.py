@@ -3,6 +3,12 @@ import urllib2
 
 
 def download(url, user_agent='wswp', num_entries=2):
+    """
+    :param url:
+    :param user_agent:
+    :param num_entries:
+    :return:
+    """
     print 'Downloading: ', url
     headers = {'User-agent': user_agent}
     request = urllib2.Request(url, headers=headers)

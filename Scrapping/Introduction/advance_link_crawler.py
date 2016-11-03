@@ -1,18 +1,28 @@
-import sys
 from link_crawler import *
-import urllib2
 import urlparse
 
 
-def link_crawler_two(seed_url, link_regx):
-    """"
-    Crawl from the given seed URL following links matched by link_regx
+def link_crawler(seed_url, link_regx):
+    """
+    :param seed_url:
+    :param link_regx:
+    :return:
     """
     crawl_queue = [seed_url]
+
+    # keep track which URL's have seen before
+    seen = set(crawl_queue)
+
     while crawl_queue:
         url = crawl_queue.pop()
         html = download(url)
         for link in get_links(html):
-            if re.match(link_regx, link):
+
+            # check if link matches expected regex
+            if re.match(link, link_regx):
+                # from absolute link
                 link = urlparse.urljoin(seed_url, link)
-                crawl_queue.append(link)
+                # check if have already seen this link
+                if link not in seen:
+                    seen.add(link)
+                    crawl_queue.append(link)
