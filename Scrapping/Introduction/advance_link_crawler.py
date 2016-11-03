@@ -12,4 +12,7 @@ def link_crawler_two(seed_url, link_regx):
     while crawl_queue:
         url = crawl_queue.pop()
         html = download(url)
-        for link in get_links
+        for link in get_links(html):
+            if re.match(link_regx, link):
+                link = urlparse.urljoin(seed_url, link)
+                crawl_queue.append(link)
