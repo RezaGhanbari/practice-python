@@ -1,27 +1,5 @@
 import re
-import urllib2
-
-
-def download(url, user_agent='wswp', num_entries=2):
-    """
-    :param url:
-    :param user_agent:
-    :param num_entries:
-    :return:
-    """
-    print 'Downloading: ', url
-    headers = {'User-agent': user_agent}
-    request = urllib2.Request(url, headers=headers)
-    try:
-        html = urllib2.urlopen(request).read()
-    except urllib2.URLError as e:
-        print 'Download error: ', e.reason
-        html = None
-        if num_entries > 2:
-            if hasattr(e, 'code') and 500 <= e.code < 600:
-                # retry 5XX HTTP errors
-                return download(url, user_agent, num_entries)
-    return html
+from download_webpage_3 import *
 
 
 def get_links(html):
@@ -31,8 +9,8 @@ def get_links(html):
     :return:
     """
     # A regular expression to extract all links from the web page
+    # re.compile is arguments : (pattern & flag)
     webpage_regex = re.compile('<a[^>]+href=["\'](.*?)["\']', re.IGNORECASE)
-
     # List of all links from the web page
     return webpage_regex.findall(html)
 
