@@ -26,3 +26,7 @@ def link_crawler(seed_url, link_regx):
                 if link not in seen:
                     seen.add(link)
                     crawl_queue.append(link)
+
+if __name__ == '__main__':
+    link_crawler('http://example.webscraping.com',
+                 'example.webscraping.com/(index|view)/')
