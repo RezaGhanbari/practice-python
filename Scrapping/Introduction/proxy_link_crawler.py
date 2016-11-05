@@ -2,6 +2,19 @@ import urllib2
 import urlparse
 
 
+def get_links(html):
+    """
+    Return a list of links from html
+    :param html:
+    :return:
+    """
+    # A regular expression to extract all links from the web page
+    # re.compile is arguments : (pattern & flag)
+    webpage_regex = re.compile('<a[^>]+href=["\'](.*?)["\']', re.IGNORECASE)
+    # List of all links from the web page
+    return webpage_regex.findall(html)
+
+
 def download(url, user_agent='wswp', proxy=None, num_retries=2):
     print 'Downloading: ', url
     headers = {

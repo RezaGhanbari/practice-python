@@ -1,5 +1,6 @@
-from link_crawler import *
+from proxy_link_crawler import *
 import urlparse
+import re
 
 
 def link_crawler(seed_url, link_regx):
