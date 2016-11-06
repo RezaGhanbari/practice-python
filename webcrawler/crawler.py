@@ -4,7 +4,8 @@ import urllib2
 import time
 from datetime import datetime
 import robotparser
-import Queue
+# import Queue
+from collection import deque
 
 
 def link_crawler(seed_url,
@@ -32,7 +33,7 @@ def link_crawler(seed_url,
     """
 
     # the queue of URL's that still need to be crawled
-    crawl_queue = Queue.deque([seed_url])
+    crawl_queue = deque([seed_url])
 
     # the URL's that have been seen and at what depth
     seen = {seed_url: 0}
