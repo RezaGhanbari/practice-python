@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 import robotparser
 # import Queue
-from collection import deque
+from collections import deque
 
 
 def link_crawler(seed_url,
