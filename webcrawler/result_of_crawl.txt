@@ -1,0 +1,2 @@
+Downloading: http://example.webscraping.com/view/UnitedKingdom-239
+['<img src="/places/static/images/flags/gb.png" />', '244,820 square kilometres', '62,348,447', 'GB', 'United Kingdom', 'London', '<a href="/continent/EU">EU</a>', '.uk', 'GBP', 'Pound', '44', '@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA', '^(([A-Z]\\d{2}[A-Z]{2})|([A-Z]\\d{3}[A-Z]{2})|([A-Z]{2}\\d{2}[A-Z]{2})|([A-Z]{2}\\d{3}[A-Z]{2})|([A-Z]\\d[A-Z]\\d[A-Z]{2})|([A-Z]{2}\\d[A-Z]\\d[A-Z]{2})|(GIR0AA))$', 'en-GB,cy-GB,gd', '<div><a href="/iso/IE">IE </a></div>']
