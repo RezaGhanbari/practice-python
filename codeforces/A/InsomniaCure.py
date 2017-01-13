@@ -1,5 +1,9 @@
 from __future__ import print_function
-
-I = input
-x = map(I, ' ' * 4)
-print(sum(any(i % j < 1 for j in x) for i in range(-I(), 0)))
+x=[]
+for j in range(5):
+    x.append(input())
+count = 0
+for i in range(1, x[4]+1):
+    if i % x[0] == 0 or i % x[1] == 0 or i % x[2] == 0 or i % x[3] == 0:
+        count += 1
+print(count)
